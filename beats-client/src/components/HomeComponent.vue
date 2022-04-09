@@ -2,10 +2,12 @@
     <div>
         <!-- Sidebar Left --->
         <SidebarLeft></SidebarLeft>
+        <!-- Main Content --->
+        <MainContainer @songSelect="selectSong"></MainContainer>
         <!-- Sidebar Right --->
         <SidebarRight></SidebarRight>
          <!-- Currently Playing  --->
-        <BottomBar></BottomBar>
+        <BottomBar :song="selectedSong"></BottomBar>
     </div>
 </template>
 
@@ -13,21 +15,26 @@
 import SidebarLeft from "./containers/SidebarLeft.vue"
 import SidebarRight from "./containers/SidebarRight.vue"
 import BottomBar from "./containers/BottomBar.vue"
-import { getAllAlbums } from "../scripts/rest"
+import MainContainer from "./containers/MainContainer.vue"
 export default {
     components: {
-        SidebarLeft, SidebarRight, BottomBar
+        SidebarLeft, SidebarRight, BottomBar, MainContainer
     },
 
     data() {
         return {
-            albums: undefined
+            selectedSong: undefined
         }
     },
 
     async created() {
-        this.albums = await getAllAlbums()
-        console.log(this.albums[0]);
+        
+    },
+
+    methods: {
+        selectSong(song) {
+            this.selectedSong = song
+        }
     }
 }
 </script>

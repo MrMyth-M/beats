@@ -1,6 +1,6 @@
 package at.streitner.beats.rest;
 
-import at.streitner.beats.dao.AlbumDao;
+import at.streitner.beats.dao.AlbumDAO;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;
@@ -16,7 +16,7 @@ import javax.ws.rs.core.Response;
 public class AlbumResource {
 
     @Inject
-    AlbumDao albumDao;
+    AlbumDAO albumDao;
 
     @Path("/all")
     @GET

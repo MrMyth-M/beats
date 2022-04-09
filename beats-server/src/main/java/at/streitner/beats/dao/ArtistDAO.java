@@ -10,7 +10,7 @@ import java.util.List;
 
 @Named
 @Dependent
-public class ArtistDao {
+public class ArtistDAO {
 
     @Inject
     EntityManager em;

@@ -1,6 +1,6 @@
 package at.streitner.beats.rest;
 
-import at.streitner.beats.dao.ArtistDao;
+import at.streitner.beats.dao.ArtistDAO;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;
@@ -16,7 +16,7 @@ import javax.ws.rs.core.Response;
 public class ArtistResource {
 
     @Inject
-    ArtistDao artistDao;
+    ArtistDAO artistDao;
 
     @GET
     @Path("/all")
